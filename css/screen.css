@@ -200,6 +200,10 @@ a:visited, a:active, a:hover, a:focus {
         padding-left: 48px;
         padding-right: 48px;
     }
+    .o-row--md {
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
     .o-row--lg {
         padding-top: 72px;
         padding-bottom: 48px;
@@ -215,7 +219,7 @@ a:visited, a:active, a:hover, a:focus {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 90em;
+    max-width: 56.5em;
     /* 90 * 16px = 1440px */
 }
 
@@ -337,6 +341,33 @@ a:visited, a:active, a:hover, a:focus {
 }
 
 /*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    overflow: auto;
+    overflow: hidden;
+}
+
+.o-section+.o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg+.o-section--lg, .o-section--xl+.o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl+.o-section--xl {
+        margin-top: 72px;
+    }
+}
+
+/*
     Objects: List
     ---
     Small reusable object to remove default list styling from lists
@@ -372,6 +403,27 @@ a:visited, a:active, a:hover, a:focus {
 }
 
 /*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header__nav {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .c-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .c-header__nav {
+        display: block;
+    }
+}
+
+/*
     Component: Nav
     ---
     Main navigation of the site
@@ -395,6 +447,10 @@ a:visited, a:active, a:hover, a:focus {
 
 .c-nav__link, .c-nav__link:visited, .c-nav__link:active {
     color: #202024;
+}
+
+.c-nav__link--meta, .c-nav__link--meta:visited, .c-nav__link--meta:active {
+    color: #5c6c75;
 }
 
 .c-nav__link:hover, .c-nav__link:focus {
@@ -643,6 +699,16 @@ a:visited, a:active, a:hover, a:focus {
     .u-5-of-6-bp4 {
         width: 83.3333333333% !important;
     }
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
 }
 
 /*------------------------------------*\
